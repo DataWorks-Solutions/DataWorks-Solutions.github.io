@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DataWorks - Optimice su Negocio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+<!-- Estilos -->
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1193d4",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101c22",
+              "dw-dark-blue": "#0A2540",
+              "dw-teal": "#00C4CC",
+              "dw-light-gray": "#F6F9FC",
+              "dw-dark-gray": "#425466"
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              pulse: {
+                '0%, 100%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.05)' },
+              }
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+              'pulse': 'pulse 2s infinite',
+            },
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    details > summary {
+      list-style: none;
+    }
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+    details[open] .plus-icon {
+        transform: rotate(45deg);
+    }
+  </style>
+<style type="text/tailwindcss">
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-on-scroll {
+        animation: fadeInUp 0.8s ease-out both;
+        animation-timeline: view();
+        animation-range: entry 10% cover 30%;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 justify-between border-b border-gray-200 dark:border-gray-700">
+<a href="./index.html" class="text-dw-dark-blue dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] flex-1">DataWorks</a>
+<div class="flex items-center gap-4">
+<!--<a class="hidden sm:block text-dw-dark-blue dark:text-white text-sm font-bold" href="#">Iniciar Sesión</a>-->
+<a class="hidden sm:block text-white text-sm font-bold bg-dw-dark-blue px-4 py-2 rounded-lg" href="#">Solicitar Presupuesto</a>
+<!-- <button class="text-dw-dark-blue dark:text-white">
+<span class="material-symbols-outlined text-3xl">menu</span>
+<ul>
+  <li>
+    <a href="./sistema.html" class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-dw-dark-gray dark:text-gray-400 pb-[13px] pt-4 flex-1 whitespace-nowrap px-3 hover:text-primary dark:hover:text-primary hover:border-b-primary/50 transition-colors duration-300">
+      <p>SGO DataWorks</p>
+    </a>
+  </li>
+</ul>
+</button>-->
+<!-- prueba de navegador -->
+<nav>
+  <ul class="hidden md:flex items-center space-x-4">
+    <li>
+      <a href="sistema.html">SGO DataWorks</a>
+    </li>
+  </ul>
+
+  <div class="md:hidden">
+    <button id="boton-menu-movil">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</nav>
+
+<div id="menu-movil" class="hidden">
+  <ul>
+    <li><a href="sistema.html">SGO DataWorks</a></li>
+  </ul>
+</div>
+</div>
+</header>
+
+<main>
+
+<div class="@[container]">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10" data-alt="Abstract blue and teal geometric pattern" style='background-image: linear-gradient(rgba(10, 37, 64, 0.4) 0%, rgba(10, 37, 64, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCwgxnfWA8wk1f7btj-yZEfnlbcnLQWF3hqyssQ_No9pW6QGzRi--NMlKpe0-6_N3mZP-XSVpEDxGvf2tgbR2zhhzQ_X67a5ynS77IqG9QhqNe7evJIaDgGfFW-gJqc7Fy7q0IGKA7GwobtTaFKbFDYEClF0at9K5QVRXyY8AVVDP6ekl6uFEEkQxc69e5HdPDmt-OXRg5O2Fslfcf9cujC59T3kDT70pnXq5r5bc7g09Hd-AU5fHh5ejL8EI8vjlvNp827lBnHX3lI");'>
+<div class="flex flex-col gap-4 text-left">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl">
+                                Optimice sus Procesos con Soluciones Digitales y Análisis de Datos
+                            </h1>
+<h2 class="text-gray-200 text-base font-normal leading-normal @[480px]:text-lg">
+                                Desarrollamos soluciones completas de poco código y análisis avanzado para que su organización ahorre tiempo y se centre en lo esencial.
+                            </h2>
+</div>
+<div class="flex w-full flex-col sm:flex-row gap-3">
+<button class="flex w-full sm:w-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:scale-105 active:scale-95">
+<span class="truncate">Contacto con ventas</span>
+</button>
+<button class="flex w-full sm:w-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-white/90 text-dw-dark-blue text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:scale-105 active:scale-95">
+<span class="truncate">Obtener más información</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="pb-3 sticky top-[73px] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-40">
+<!-- Contenedor de las solapas -->
+  <div id="tab-navigation" class="flex border-b border-gray-200 dark:border-gray-700 px-4 justify-between overflow-x-auto">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-dw-dark-blue dark:text-white pb-[13px] pt-4 flex-1 whitespace-nowrap px-3 transition-colors duration-300" href="#Nuestros-servicios">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Servicios</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-dw-dark-gray dark:text-gray-400 pb-[13px] pt-4 flex-1 whitespace-nowrap px-3 hover:text-primary dark:hover:text-primary hover:border-b-primary/50 transition-colors duration-300" href="#Casos-de-exito">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Casos de Éxito</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-dw-dark-gray dark:text-gray-400 pb-[13px] pt-4 flex-1 whitespace-nowrap px-3 hover:text-primary dark:hover:text-primary hover:border-b-primary/50 transition-colors duration-300" href="#Precios">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Precios</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-dw-dark-gray dark:text-gray-400 pb-[13px] pt-4 flex-1 whitespace-nowrap px-3 hover:text-primary dark:hover:text-primary hover:border-b-primary/50 transition-colors duration-300" href="#Recursos">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Recursos</p>
+</a>
+  </div>
+</div>
+
+<!-- Contenido de las solapas -->
+<div id="tab-content">
+<!-- Sección Nuestros servicios -->
+<section id="Nuestros-servicios">
+  <div class="flex flex-col gap-10 px-4 py-10 @container">
+  <div class="flex flex-col gap-4">
+  <h2 class="text-dw-dark-blue dark:text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] animate-fade-in-up">
+                          Nuestros Servicios
+                      </h2>
+  <p class="text-dw-dark-gray dark:text-gray-300 text-base font-normal leading-normal max-w-[720px] animate-fade-in-up [animation-delay:200ms]">
+                          Ofrecemos un conjunto de servicios diseñados para optimizar sus operaciones y obtener información de sus datos.
+                      </p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+  <div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-4 flex-col transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg animate-fade-in-up [animation-delay:300ms]">
+  <div class="text-primary"><span class="material-symbols-outlined text-3xl">pie_chart</span></div>
+  <!-- Tarjeta Análisis de Datos -->  
+  <div class="flex flex-col gap-1">
+  <h3 class="text-dw-dark-blue dark:text-white text-lg font-bold leading-tight">Análisis de Datos</h3>
+  <p class="text-dw-dark-gray dark:text-gray-400 text-sm font-normal leading-normal">Convierta datos brutos en inteligencia de negocio procesable.</p>
+  <div class="mt-4 flex flex-wrap items-center gap-4">
+    <img alt="BigQuery logo" class="h-8 w-auto" src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg"/>
+    <img alt="Tableau logo" class="h-8 w-auto" src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg"/>
+    <img alt="Google Looker Studio logo" class="h-8 w-auto" src="https://images.seeklogo.com/logo-png/61/2/looker-studio-logo-png_seeklogo-617989.png"/>
+    <img alt="MS Power BI logo" class="h-8 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/640px-New_Power_BI_Logo.svg.png"/>
+        <img alt="R logo" class="h-8 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/640px-R_logo.svg.png"/>
+  </div>
+  <p class="text-dw-dark-gray dark:text-gray-400 text-sm font-normal leading-normal">Transformamos sus datos en insights valiosos a través de visualizaciones, reportes interactivos y modelos predictivos.</p>
+  <ul class="mt-4 space-y-3 text-sm text-dw-dark-gray dark:text-gray-400">
+    <li><strong class="text-dw-dark-blue dark:text-white">Análisis y Visualización:</strong> Creación de tableros de control y reportes dinámicos para una toma de decisiones informada.</li>
+    <li><strong class="text-dw-dark-blue dark:text-white">Bases de Datos y SQL:</strong> Gestionamos y consultamos grandes volúmenes de datos con tecnologías robustas y escalables.</li>
+    <li><strong class="text-dw-dark-blue dark:text-white">Programación:</strong> Desarrollamos scripts y modelos estadísticos para análisis avanzados y visualizaciones personalizadas.</li>
+  </ul>
+  </div>
+  </div>
+
+  <div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-4 flex-col transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg animate-fade-in-up [animation-delay:400ms]">
+  <div class="text-primary"><span class="material-symbols-outlined text-3xl">account_tree</span></div>
+  <!-- Tarjeta Flujos de Trabajo Productivos -->
+  <div class="flex flex-col gap-1">
+  <h3 class="text-dw-dark-blue dark:text-white text-lg font-bold leading-tight">Flujos de Trabajo Productivos</h3>
+  <p class="text-dw-dark-gray dark:text-gray-400 text-sm font-normal leading-normal">Diseñe e implemente procesos operativos eficientes.</p>
+  
+  <div class="mt-4 flex flex-wrap items-center gap-4">
+    <img alt="Excel logo" class="h-8 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg"/>
+    <img alt="Google Sheets logo" class="h-8 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/3/30/Google_Sheets_logo_%282014-2020%29.svg"/>
+    <img alt="Google Apps Script logo" class="h-8 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_Apps_Script.svg/640px-Google_Apps_Script.svg.png"/>
+    <img alt="Google Drive logo" class="h-8 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/640px-Google_Drive_icon_%282020%29.svg.png"/>
+  </div>
+  <p class="text-dw-dark-gray dark:text-gray-400 text-sm font-normal leading-normal">Mejoramos la comunicación y colaboración interna a través de herramientas y procesos optimizados.</p>
+  <ul class="mt-4 space-y-3 text-sm text-dw-dark-gray dark:text-gray-400">
+    <li><strong class="text-dw-dark-blue dark:text-white">Planillas de Trabajo Eficientes:</strong> Desarrollo de planillas de trabajo en la nube con AppScript.</li>
+    <li><strong class="text-dw-dark-blue dark:text-white">Comunicación Eficiente:</strong> Automatización de envío de correos desde planillas con AppScript.</li>
+    <li><strong class="text-dw-dark-blue dark:text-white">Colaboración y Gestión:</strong> Uso de herramientas para gestión de objetivos y control de tareas.</li>
+  </ul>
+  </div>
+  </div>
+
+  <div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-4 flex-col transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg animate-fade-in-up [animation-delay:500ms]">
+  <div class="text-primary"><span class="material-symbols-outlined text-3xl">precision_manufacturing</span></div>
+  <!-- Tarjeta Automatización de Procesos -->
+  <div class="flex flex-col gap-1">
+  <h3 class="text-dw-dark-blue dark:text-white text-lg font-bold leading-tight">Automatización de Procesos</h3>
+  <p class="text-dw-dark-gray dark:text-gray-400 text-sm font-normal leading-normal">Automatice tareas repetitivas para ahorrar tiempo y reducir errores.</p>
+  <div class="mt-4 flex flex-wrap items-center gap-4">
+    <img alt="MS Power Automate logo" class="h-8 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Microsoft_Power_Automate.svg/640px-Microsoft_Power_Automate.svg.png"/>
+    <img alt="Google Appsheet logo" class="h-8 w-auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFBft2UUnBGYpomEO8CUaA7d1i_OUSbsp7Iw&s"/>
+  </div>
+  <p class="text-dw-dark-gray dark:text-gray-400 text-sm font-normal leading-normal">Utilizamos herramientas líderes para optimizar sus flujos de trabajo, reducir tareas manuales y aumentar la eficiencia.</p>
+  <ul class="mt-4 space-y-3 text-sm text-dw-dark-gray dark:text-gray-400">
+    <li><strong class="text-dw-dark-blue dark:text-white">AppSheet:</strong> Gestión y seguimiento de operaciones con AppSheet.</li>
+    <li><strong class="text-dw-dark-blue dark:text-white">Flujos de Trabajo:</strong> Optimización de procesos administrativos.</li>
+    <li><strong class="text-dw-dark-blue dark:text-white">Gestión Administrativa:</strong> Modelos de ingreso y envío de comprobantes de forma automática.</li>
+    <li><strong class="text-dw-dark-blue dark:text-white">Tesorería y Compras:</strong> Flujos automatizados y carga de comprobantes con Power Automate.</li>
+  </ul>
+  </div>
+  </div>
+
+  <div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/50 p-4 flex-col transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg animate-fade-in-up [animation-delay:600ms]">
+  <div class="text-primary"><span class="material-symbols-outlined text-3xl">devices</span></div>
+  <!-- Tarjeta Digitalización -->  
+  <div class="flex flex-col gap-1">
+  <h3 class="text-dw-dark-blue dark:text-white text-lg font-bold leading-tight">Digitalización</h3>
+  <p class="text-dw-dark-gray dark:text-gray-400 text-sm font-normal leading-normal">Modernice sus herramientas e infraestructura para la era digital.</p>
+  <div class="mt-4 flex flex-wrap items-center gap-4">
+    <img alt="Google Workspace logo" class="h-8 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Google_Workspace_product_icons_%282020%29.svg/640px-Google_Workspace_product_icons_%282020%29.svg.png"/>
+  </div>
+  <p class="text-dw-dark-gray dark:text-gray-400 text-sm font-normal leading-normal">Modernizamos su infraestructura digital para asegurar una presencia online profesional y una gestión documental eficiente.</p>
+  <ul class="mt-4 space-y-3 text-sm text-dw-dark-gray dark:text-gray-400">
+    <li><strong class="text-dw-dark-blue dark:text-white">Gestión de Dominio:</strong> Administración en TAD, NIC.ar y GoDaddy.</li>
+    <li><strong class="text-dw-dark-blue dark:text-white">Correo y Colaboración:</strong> Implementación de Google Workspace Business Starter (dominios, usuarios, correos).</li>
+    <li><strong class="text-dw-dark-blue dark:text-white">Gestión Documental:</strong> Estructura de carpetas en la nube para un acceso seguro y organizado.</li>
+  </ul>
+  </div>
+  </div>
+
+  </div>
+  </div>
+
+</section>
+<!-- Sección Casos de éxito -->
+<section id="Casos-de-exito" class="hidden">
+  <div class="bg-dw-light-gray dark:bg-background-dark/30 px-4 py-10 overflow-hidden">
+  <div class="max-w-lg mx-auto">
+  <h2 class="text-dw-dark-blue dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] pb-8 text-center animate-on-scroll">Historias Reales, Impacto Real</h2>
+  <div class="flex flex-col gap-6">
+
+  <div class="animate-on-scroll bg-white dark:bg-dw-dark-blue/30 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+  <p class="text-primary text-5xl font-extrabold leading-none tracking-tighter text-center">300%</p>
+  <p class="text-dw-dark-blue dark:text-white mt-2 text-lg font-bold text-center">Retorno de Inversión Promedio</p>
+  <p class="text-dw-dark-gray dark:text-gray-300 mt-1 text-base">Nuestros clientes experimentan un crecimiento sustancial, validando la eficacia de nuestras soluciones.</p>
+  </div>
+  <div class="animate-on-scroll [animation-delay:150ms] bg-white dark:bg-dw-dark-blue/30 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+  <p class="text-primary text-5xl font-extrabold leading-none tracking-tighter text-center ">1,500+</p>
+  <p class="text-dw-dark-blue dark:text-white mt-2 text-lg font-bold text-center ">Horas Ahorradas por Cliente</p>
+  <p class="text-dw-dark-gray dark:text-gray-300 mt-1 text-base">Optimizamos flujos de trabajo para que su equipo se enfoque en lo que realmente importa.</p>
+  </div>
+  <div class="animate-on-scroll [animation-delay:300ms] bg-white dark:bg-dw-dark-blue/30 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+  <p class="text-primary text-5xl font-extrabold leading-none tracking-tighter text-center ">80%</p>
+  <p class="text-dw-dark-blue dark:text-white mt-2 text-lg font-bold text-center ">Procesos Redundantes Eliminados</p>
+  <p class="text-dw-dark-gray dark:text-gray-300 mt-1 text-base">Identificamos y eliminamos ineficiencias, agilizando sus operaciones diarias.</p>
+  </div>
+  </div>
+  <div class="mt-10 animate-on-scroll [animation-delay:450ms]">
+  <div class="bg-white dark:bg-dw-dark-blue/50 rounded-xl p-6 shadow-md border border-gray-200 dark:border-gray-700">
+  <p class="text-dw-dark-gray dark:text-gray-300 text-lg italic leading-relaxed">"La implementación de DataWorks ha sido un cambio de juego para nuestra productividad. La reducción de errores manuales y la optimización de procesos nos ha permitido enfocarnos en el crecimiento estratégico."</p>
+  <div class="flex items-center mt-6">
+  <img class="h-12 w-12 rounded-full object-cover" data-alt="Portrait of a smiling man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjRWBTYPfd2q4bYmxJh8-5s3mnKfFw6djpxCw-ALhBflhyDQKLXR6f6KfIoJO7LypJQ1NEdb0OHFZ0TRyKSyPZdqKqN1JPFbhFbt_nAHl1Eti6AA0FnUZdrjfhn93KVuZd-tp36jtF40MiuAhiHxFMfOWMglMIVrCnpUoqx6xAs8Kn1DCWXeWSM9jHIGH9hfux7choQC-prBNFZWh2NIQ5vmBGsmeebOSyyUVTA5_Qdr-YhfYTFWKUB4jU1oV_z3koYzdeziFysJTr"/>
+  <div class="ml-4">
+  <p class="font-bold text-dw-dark-blue dark:text-white">Marcos Vega</p>
+  <p class="text-sm text-dw-dark-gray dark:text-gray-400">VP de Operaciones, Soluciones Futura</p>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+<!-- Sección Precios -->
+<section id="Precios" class="hidden">
+  <div class="px-4 py-10 overflow-hidden">
+  <div class="max-w-lg mx-auto">
+  <div class="text-center mb-10 animate-on-scroll">
+  <h2 class="text-dw-dark-blue dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]">Planes para cada necesidad</h2>
+  <p class="text-dw-dark-gray dark:text-gray-300 mt-2 text-base">Elija el plan que se adapte a sus objetivos y presupuesto.</p>
+  </div>
+  <div class="flex flex-col gap-6">
+  <div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm animate-on-scroll transition-all duration-300 ease-in-out hover:scale-105 hover:bg-dw-light-gray dark:hover:bg-dw-dark-blue/40">
+  <h3 class="text-dw-dark-blue dark:text-white text-xl font-bold">Básico (Proyecto Único)</h3>
+  <p class="text-dw-dark-gray dark:text-gray-300 mt-2 text-sm">Ideal para empresas que buscan una solución específica a un problema puntual. Entregamos un proyecto completo y definido.</p>
+  <p class="text-dw-dark-blue dark:text-white text-3xl font-extrabold mt-4 tracking-tight">Desde $2,500</p>
+  <button class="w-full mt-4 text-primary dark:text-dw-teal text-sm font-bold border border-primary dark:border-dw-teal rounded-lg py-2.5 hover:bg-primary/10 dark:hover:bg-dw-teal/10 transition-colors">Seleccionar Plan</button>
+  </div>
+  <div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-primary dark:border-dw-teal shadow-lg animate-on-scroll transition-all duration-300 ease-in-out hover:scale-105 ring-2 ring-primary dark:ring-dw-teal scale-105">
+  <div class="flex justify-between items-center">
+  <h3 class="text-dw-dark-blue dark:text-white text-xl font-bold">Estándar (Suscripción)</h3>
+  <span class="bg-primary/10 dark:bg-dw-teal/20 text-primary dark:text-dw-teal text-xs font-bold px-2 py-1 rounded-full">POPULAR</span>
+  </div>
+  <p class="text-dw-dark-gray dark:text-gray-300 mt-2 text-sm">Perfecto para un soporte continuo. Incluye análisis recurrentes, optimización de procesos y soporte prioritario.</p>
+  <p class="text-dw-dark-blue dark:text-white text-3xl font-extrabold mt-4 tracking-tight">Desde $1,200/mes</p>
+  <button class="w-full mt-4 text-white bg-primary dark:bg-dw-teal dark:text-dw-dark-blue text-sm font-bold rounded-lg py-2.5 hover:bg-primary/90 dark:hover:bg-dw-teal/90 transition-colors">Seleccionar Plan</button>
+  </div>
+  <div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm animate-on-scroll transition-all duration-300 ease-in-out hover:scale-105 hover:bg-dw-light-gray dark:hover:bg-dw-dark-blue/40">
+  <h3 class="text-dw-dark-blue dark:text-white text-xl font-bold">Premium (Personalizado)</h3>
+  <p class="text-dw-dark-gray dark:text-gray-300 mt-2 text-sm">Una solución integral y a medida. Trabajamos como su socio estratégico para una transformación digital completa.</p>
+  <p class="text-dw-dark-blue dark:text-white text-3xl font-extrabold mt-4 tracking-tight">Basado en Valor</p>
+  <button class="w-full mt-4 text-primary dark:text-dw-teal text-sm font-bold border border-primary dark:border-dw-teal rounded-lg py-2.5 hover:bg-primary/10 dark:hover:bg-dw-teal/10 transition-colors">Contactar</button>
+  </div>
+  </div>
+  <div class="mt-12 text-center animate-on-scroll">
+  <p class="text-dw-dark-gray dark:text-gray-300">Experimente un servicio de Data Analysis introductorio gratis durante 30 días.</p>
+  <button class="mt-4 flex w-full max-w-sm mx-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-dw-dark-blue dark:bg-white text-white dark:text-dw-dark-blue text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:scale-105 active:scale-95 animate-pulse">
+                          Iniciar Prueba Gratuita
+                      </button>
+  </div>
+  </div>
+  </div>
+</section>
+<!-- Sección Recursos -->
+<section id="Recursos" class="hidden"> 
+  <div class="px-4 py-10 overflow-hidden">
+  <div class="max-w-lg mx-auto">
+  <div class="text-center mb-10 animate-on-scroll">
+  <h2 class="text-dw-dark-blue dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]">Conocimiento a su Alcance</h2>
+  <p class="text-dw-dark-gray dark:text-gray-300 mt-2 text-base">Explore nuestros recursos para profundizar su experiencia y aprendizaje.</p>
+  </div>
+  <div class="flex flex-col gap-6">
+  <div class="animate-on-scroll bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col items-start gap-3">
+  <div class="flex items-center gap-3">
+  <span class="material-symbols-outlined text-primary text-2xl">article</span>
+  <h3 class="text-dw-dark-blue dark:text-white text-xl font-bold">Blog</h3>
+  </div>
+  <p class="text-dw-dark-gray dark:text-gray-300 text-sm">Descubra artículos, tendencias y consejos sobre análisis de datos y optimización de procesos.</p>
+  <button class="w-full sm:w-auto mt-2 text-primary dark:text-dw-teal text-sm font-bold border border-primary dark:border-dw-teal rounded-lg py-2.5 px-6 hover:bg-primary/10 dark:hover:bg-dw-teal/10 transition-all duration-200 active:scale-95 active:bg-primary/20 dark:active:bg-dw-teal/20">Leer el blog</button>
+  </div>
+  <div class="animate-on-scroll [animation-delay:150ms] bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col items-start gap-3">
+  <div class="flex items-center gap-3">
+  <span class="material-symbols-outlined text-primary text-2xl">description</span>
+  <h3 class="text-dw-dark-blue dark:text-white text-xl font-bold">Documentación</h3>
+  </div>
+  <p class="text-dw-dark-gray dark:text-gray-300 text-sm">Guías técnicas y detalladas para aprovechar al máximo nuestras herramientas y soluciones.</p>
+  <button class="w-full sm:w-auto mt-2 text-primary dark:text-dw-teal text-sm font-bold border border-primary dark:border-dw-teal rounded-lg py-2.5 px-6 hover:bg-primary/10 dark:hover:bg-dw-teal/10 transition-all duration-200 active:scale-95 active:bg-primary/20 dark:active:bg-dw-teal/20">Leer documentación</button>
+  </div>
+  <div class="animate-on-scroll [animation-delay:300ms] bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col items-start gap-3">
+  <div class="flex items-center gap-3">
+  <span class="material-symbols-outlined text-primary text-2xl">auto_stories</span>
+  <h3 class="text-dw-dark-blue dark:text-white text-xl font-bold">E-book / Infografía</h3>
+  </div>
+  <p class="text-dw-dark-gray dark:text-gray-300 text-sm">Contenido visual y profundo para comprender conceptos complejos de forma sencilla.</p>
+  <button class="w-full sm:w-auto mt-2 text-primary dark:text-dw-teal text-sm font-bold border border-primary dark:border-dw-teal rounded-lg py-2.5 px-6 hover:bg-primary/10 dark:hover:bg-dw-teal/10 transition-all duration-200 active:scale-95 active:bg-primary/20 dark:active:bg-dw-teal/20">Leer el e-book</button>
+  </div>
+  <div class="animate-on-scroll [animation-delay:450ms] bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col items-start gap-3">
+  <div class="flex items-center gap-3">
+  <span class="material-symbols-outlined text-primary text-2xl">school</span>
+  <h3 class="text-dw-dark-blue dark:text-white text-xl font-bold">Aprendizaje Autodirigido</h3>
+  </div>
+  <p class="text-dw-dark-gray dark:text-gray-300 text-sm">Tutoriales y cursos para que usted y su equipo desarrollen nuevas habilidades a su propio ritmo.</p>
+  <button class="w-full sm:w-auto mt-2 bg-primary text-white text-sm font-bold rounded-lg py-2.5 px-6 hover:bg-primary/90 transition-all duration-200 active:scale-95 active:bg-primary/80">Comenzar</button>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+</div>
+
+<!-- Sección Preguntas frecuentes -->
+<section id="Preguntas-frecuentes">
+  <div class="bg-dw-light-gray dark:bg-background-dark/30 px-4 py-10 overflow-hidden">
+  <div class="max-w-lg mx-auto">
+  <div class="text-center mb-10 animate-on-scroll">
+  <h2 class="text-dw-dark-blue dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]">Preguntas Frecuentes</h2>
+  <p class="text-dw-dark-gray dark:text-gray-300 mt-2 text-base">Encuentre respuestas rápidas a sus preguntas más comunes.</p>
+  </div>
+  <div class="space-y-4">
+  <details class="group bg-white dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 animate-on-scroll">
+  <summary class="flex items-center justify-between cursor-pointer">
+  <h3 class="text-dw-dark-blue dark:text-white font-bold text-base">¿Qué tipo de servicios ofrecemos a las empresas?</h3>
+  <span class="material-symbols-outlined text-primary dark:text-dw-teal plus-icon transform transition-transform duration-300">add</span>
+  </summary>
+  <div class="pt-4 text-dw-dark-gray dark:text-gray-300 text-sm leading-relaxed">Nuestra empresa ofrece una gama de servicios diseñados para ayudar a las empresas a mejorar su eficiencia operativa y mantenerse competitivas en un entorno empresarial en constante cambio. Los servicios que ofrecemos incluyen: Data Analysis (recolección, limpieza, procesamiento y análisis de datos para extraer información significativa), Flujos de Trabajo Productivos (optimización de flujos de trabajo existentes o diseño de nuevos procesos), Automatización de Procesos (implementación de soluciones para simplificar y agilizar operaciones comerciales), Digitalización (transformación de operaciones analógicas a procesos digitales), Implementación de Proyectos (gestión del ciclo de vida completo de proyectos), y Desarrollo de Profesionales en el Uso de Aplicaciones (capacitación para mejorar habilidades en herramientas tecnológicas).</div>
+  </details>
+  <details class="group bg-white dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 animate-on-scroll [animation-delay:100ms]">
+  <summary class="flex items-center justify-between cursor-pointer">
+  <h3 class="text-dw-dark-blue dark:text-white font-bold text-base">¿Cuál es el principal beneficio que obtengo al contratar sus servicios?</h3>
+  <span class="material-symbols-outlined text-primary dark:text-dw-teal plus-icon transform transition-transform duration-300">add</span>
+  </summary>
+  <div class="pt-4 text-dw-dark-gray dark:text-gray-300 text-sm leading-relaxed">El principal beneficio es ayudar a su empresa a mejorar su eficiencia operativa, aprovechar al máximo sus recursos y mantenerse competitiva.</div>
+  </details>
+  <details class="group bg-white dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 animate-on-scroll [animation-delay:200ms]">
+  <summary class="flex items-center justify-between cursor-pointer">
+  <h3 class="text-dw-dark-blue dark:text-white font-bold text-base">¿Cómo ayuda nuestro servicio de Data Analysis a mi negocio?</h3>
+  <span class="material-symbols-outlined text-primary dark:text-dw-teal plus-icon transform transition-transform duration-300">add</span>
+  </summary>
+  <div class="pt-4 text-dw-dark-gray dark:text-gray-300 text-sm leading-relaxed">Nuestro análisis profundo y significativo de la información mejora la toma de decisiones, identifica tendencias y patrones para prever oportunidades o riesgos, optimiza procesos y recursos, y aumenta la eficiencia operativa al eliminar la redundancia.</div>
+  </details>
+  <details class="group bg-white dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 animate-on-scroll [animation-delay:300ms]">
+  <summary class="flex items-center justify-between cursor-pointer">
+  <h3 class="text-dw-dark-blue dark:text-white font-bold text-base">¿Qué resultados puedo esperar de la Automatización de Procesos?</h3>
+  <span class="material-symbols-outlined text-primary dark:text-dw-teal plus-icon transform transition-transform duration-300">add</span>
+  </summary>
+  <div class="pt-4 text-dw-dark-gray dark:text-gray-300 text-sm leading-relaxed">Reducción de errores humanos, mejora en la precisión de operaciones, ahorro de tiempo y recursos, y liberación de recursos humanos para actividades de mayor valor añadido.</div>
+  </details>
+  <details class="group bg-white dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 animate-on-scroll [animation-delay:400ms]">
+  <summary class="flex items-center justify-between cursor-pointer">
+  <h3 class="text-dw-dark-blue dark:text-white font-bold text-base">¿Qué estrategias de precios manejamos?</h3>
+  <span class="material-symbols-outlined text-primary dark:text-dw-teal plus-icon transform transition-transform duration-300">add</span>
+  </summary>
+  <div class="pt-4 text-dw-dark-gray dark:text-gray-300 text-sm leading-relaxed">Manejamos Modelo Basado en Valor, Tarifas por Proyecto, Suscripciones o Planes de Servicio, Precios Personalizados, y Precios Basados en Paquetes.</div>
+  </details>
+  <details class="group bg-white dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 animate-on-scroll [animation-delay:500ms]">
+  <summary class="flex items-center justify-between cursor-pointer">
+  <h3 class="text-dw-dark-blue dark:text-white font-bold text-base">¿Cómo garantizamos el éxito en la Implementación de Proyectos?</h3>
+  <span class="material-symbols-outlined text-primary dark:text-dw-teal plus-icon transform transition-transform duration-300">add</span>
+  </summary>
+  <div class="pt-4 text-dw-dark-gray dark:text-gray-300 text-sm leading-relaxed">Nuestro equipo de expertos gestiona el ciclo de vida completo del proyecto, enfocándose en la entrega oportuna dentro del presupuesto y alcance acordados, minimizando riesgos y proporcionando resolución rápida de problemas.</div>
+  </details>
+  <details class="group bg-white dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 animate-on-scroll [animation-delay:600ms]">
+  <summary class="flex items-center justify-between cursor-pointer">
+  <h3 class="text-dw-dark-blue dark:text-white font-bold text-base">¿Por qué es importante el Desarrollo de Profesionales?</h3>
+  <span class="material-symbols-outlined text-primary dark:text-dw-teal plus-icon transform transition-transform duration-300">add</span>
+  </summary>
+  <div class="pt-4 text-dw-dark-gray dark:text-gray-300 text-sm leading-relaxed">Es crucial para mejorar la eficiencia y productividad del personal, aumentar la satisfacción y moral del equipo, y facilitar la adaptación a cambios tecnológicos mediante capacitación continua.</div>
+  </details>
+  <details class="group bg-white dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 animate-on-scroll [animation-delay:700ms]">
+  <summary class="flex items-center justify-between cursor-pointer">
+  <h3 class="text-dw-dark-blue dark:text-white font-bold text-base">¿Cómo puedo obtener más información sobre su propuesta de valor?</h3>
+  <span class="material-symbols-outlined text-primary dark:text-dw-teal plus-icon transform transition-transform duration-300">add</span>
+  </summary>
+  <div class="pt-4 text-dw-dark-gray dark:text-gray-300 text-sm leading-relaxed">En nuestra propuesta de valor, describimos detalladamente cómo nos diferenciamos, los beneficios específicos, y ejemplos de casos de éxito o testimonios.</div>
+  </details>
+  </div>
+  </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Pie de página -->
+<footer class="bg-dw-dark-blue text-white mt-10">
+<div class="px-4 py-12 text-center">
+<h2 class="text-3xl font-extrabold tracking-tight">Dé el Siguiente Paso hacia la Optimización.</h2>
+<p class="mt-4 text-lg text-gray-300">¿Listo para liberar todo el potencial de su negocio?</p>
+<a href="./sistema.html" class="mt-8 flex w-full max-w-sm mx-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:scale-105 active:scale-95">
+                    Empezar a usar SGO DataWorks gratis
+</a>
+<div class="mt-6 flex justify-center gap-6">
+<a class="flex items-center gap-2 text-gray-300 hover:text-white" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span>Contactar con Ventas</span>
+</a>
+<a class="flex items-center gap-2 text-gray-300 hover:text-white" href="#">
+<span class="material-symbols-outlined">call</span>
+<span>Llámenos</span>
+</a>
+</div>
+</div>
+<div class="border-t border-white/10 py-6 px-4">
+<div class="text-center text-sm text-gray-400">
+<p>© 2024 DataWorks Inc. Todos los derechos reservados.</p>
+<div class="mt-2 space-x-4">
+<a class="hover:text-white" href="#">Política de Privacidad</a>
+<a class="hover:text-white" href="#">Términos de Servicio</a>
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Seleccionar todos los enlaces (solapas) y paneles de contenido
+    const tabs = document.querySelectorAll('#tab-navigation a');
+    const panels = document.querySelectorAll('#tab-content section');
+
+    // Clases de estilo para los estados activo/inactivo
+    const activeTabClasses = ['border-b-primary', 'text-dw-dark-blue', 'dark:text-white'];
+    const inactiveTabClasses = ['border-b-transparent', 'text-dw-dark-gray', 'dark:text-gray-400'];
+
+    // 2. Añadir un "escuchador" de clics a cada solapa
+    tabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        // Prevenir el salto de página por defecto del enlace
+        e.preventDefault(); 
+
+        // 3. Obtener el ID del contenido a mostrar (del href del enlace)
+        // ej: "#Nuestros-servicios"
+        const targetId = tab.getAttribute('href'); 
+
+        // 4. Actualizar las clases de las solapas
+        tabs.forEach(t => {
+          // Desactivar todas las solapas
+          t.classList.remove(...activeTabClasses);
+          t.classList.add(...inactiveTabClasses);
+        });
+        
+        // Activar solo la solapa clickeada
+        tab.classList.add(...activeTabClasses);
+        tab.classList.remove(...inactiveTabClasses);
+
+        // 5. Mostrar/Ocultar los paneles de contenido
+        panels.forEach(panel => {
+          // Ocultar todos los paneles
+          panel.classList.add('hidden');
+          
+          // Mostrar solo el panel que corresponde al ID del enlace clickeado
+          if (panel.id === targetId.substring(1)) { // quitamos el '#' con substring(1)
+            panel.classList.remove('hidden');
+          }
+        });
+      });
+    });
+  });
+</script>
+</body></html>
