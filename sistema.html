@@ -105,9 +105,41 @@
 <div class="flex items-center gap-4">
 <!--<a class="hidden sm:block text-dw-dark-blue dark:text-white text-sm font-bold" href="#">Iniciar Sesión</a>-->
 <a class="hidden sm:block text-white text-sm font-bold bg-dw-dark-blue px-4 py-2 rounded-lg" href="#">Solicitar Demo</a>
-<button class="text-dw-dark-blue dark:text-white">
-<span class="material-symbols-outlined text-3xl">menu</span>
-</button>
+
+<!-- prueba de navegador -->
+<nav class="relative flex justify-end p-4">
+
+  <button id="boton-movil" class="text-dw-dark-blue dark:text-white z-50">
+    <span id="icono-menu" class="material-symbols-outlined text-3xl">menu</span>
+  </button>
+
+  <div id="menu-movil" class="hidden absolute top-12 right-4 z-40 min-w-[200px] bg-white dark:bg-dw-dark-blue rounded-lg shadow-lg border dark:border-gray-700">
+    <ul class="flex flex-col p-2">
+      <li>
+        <a href="index.html" class="block w-full px-4 py-2 rounded text-dw-dark-blue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+          Principal
+        </a>
+      </li>
+      <li>
+        <a href="precios.html" class="block w-full px-4 py-2 rounded text-dw-dark-blue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+          Precios
+        </a>
+      </li>
+      <li>
+        <a href="recursos.html" class="block w-full px-4 py-2 rounded text-dw-dark-blue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+          Recursos
+        </a>
+      </li>
+      <li>
+        <a href="sistema.html" class="block w-full px-4 py-2 rounded text-dw-dark-blue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+          Productos para Pymes
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+
 </div>
 </header>
 <main class="flex-1">
@@ -282,4 +314,32 @@
 </div>
 </footer>
 </div>
+<!-- Script para el menú hamburguesa -->
+<script>
+  // Espera a que la página esté cargada
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Selecciona los elementos por su ID
+    const boton = document.getElementById('boton-movil');
+    const menu = document.getElementById('menu-movil');
+    const icono = document.getElementById('icono-menu');
+
+    // 2. Escucha el 'clic' en el botón
+    boton.addEventListener('click', () => {
+      
+      // 3. Alterna la clase 'hidden' en el menú
+      // (Si está oculto lo muestra, si está visible lo oculta)
+      menu.classList.toggle('hidden');
+
+      // 4. (Opcional) Cambia el ícono de 'menu' a 'close'
+      if (menu.classList.contains('hidden')) {
+        // Menú está oculto
+        icono.textContent = 'menu';
+      } else {
+        // Menú está visible
+        icono.textContent = 'close';
+      }
+    });
+  });
+</script>
 </body></html>
