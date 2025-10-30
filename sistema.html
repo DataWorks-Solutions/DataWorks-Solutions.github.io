@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link rel="icon" type="image/png" href="./Logo.jpg">
-<title>DataWorks - Sistema de Gestión Operativa (SGO)</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    }
-  </style>
-<script id="tailwind-config">
+<html class="light" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link rel="icon" type="image/png" href="./Logo.jpg">
+  <title>DataWorks - Sistema de Gestión Operativa (SGO)</title>
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
@@ -29,31 +27,10 @@
           fontFamily: {
             "display": ["Manrope", "sans-serif"]
           },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
           keyframes: {
-            fadeInUp: {
-              '0%': {
-                opacity: '0',
-                transform: 'translateY(20px)'
-              },
-              '100%': {
-                opacity: '1',
-                transform: 'translateY(0)'
-              },
-            },
-            pulse: {
-              '0%, 100%': {
-                transform: 'scale(1)'
-              },
-              '50%': {
-                transform: 'scale(1.05)'
-              },
-            }
+            fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            pulse: { '0%, 100%': { transform: 'scale(1)' }, '50%': { transform: 'scale(1.05)' } }
           },
           animation: {
             'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
@@ -63,290 +40,24 @@
       },
     }
   </script>
-<style type="text/tailwindcss">
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .animate-on-scroll {
-      animation: fadeInUp 0.8s ease-out both;
-      animation-timeline: view();
-      animation-range: entry 10% cover 30%;
-    }.carousel-container {
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-    .carousel-item {
-      scroll-snap-align: center;
-      flex: 0 0 100%;
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="font-display bg-background-light dark:bg-background-dark text-dw-dark-blue dark:text-dw-light-gray">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<header class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 justify-between border-b border-gray-200 dark:border-gray-700">
-<!-- Título -->
-  <a href="./index.html" class="text-dw-dark-blue dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] flex-1 flex items-center">
   
-  <img src="Logo.jpg" alt="Logo de DataWorks" class="h-12 w-12 rounded-full">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  
+</head>
 
-  <span class="ml-2">DataWorks</span>
-
-</a>
-<div class="flex items-center gap-4">
-<!--<a class="hidden sm:block text-dw-dark-blue dark:text-white text-sm font-bold" href="#">Iniciar Sesión</a>-->
-<a class="hidden sm:block text-white text-sm font-bold bg-dw-dark-blue px-4 py-2 rounded-lg" href="#">Solicitar Demo</a>
-
-<!-- prueba de navegador -->
-<nav class="relative flex justify-end p-4">
-
-  <button id="boton-movil" class="text-dw-dark-blue dark:text-white z-50">
-    <span id="icono-menu" class="material-symbols-outlined text-3xl">menu</span>
-  </button>
-
-  <div id="menu-movil" class="hidden absolute top-12 right-4 z-40 min-w-[200px] bg-white dark:bg-dw-dark-blue rounded-lg shadow-lg border dark:border-gray-700">
-    <ul class="flex flex-col p-2">
-      <li>
-        <a href="index.html" class="block w-full px-4 py-2 rounded text-dw-dark-blue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-          Principal
-        </a>
-      </li>
-      <li>
-        <a href="precios.html" class="block w-full px-4 py-2 rounded text-dw-dark-blue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-          Precios
-        </a>
-      </li>
-      <li>
-        <a href="recursos.html" class="block w-full px-4 py-2 rounded text-dw-dark-blue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-          Recursos
-        </a>
-      </li>
-      <li>
-        <a href="sistema.html" class="block w-full px-4 py-2 rounded text-dw-dark-blue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-          Productos para Pymes
-        </a>
-      </li>
-    </ul>
-  </div>
-
-</nav>
-
-</div>
-</header>
-<main class="flex-1">
-<section class="p-4 pt-8 sm:p-6 sm:pt-10 text-center">
-<h1 class="text-4xl sm:text-5xl font-extrabold tracking-tighter text-dw-dark-blue dark:text-white">El Sistema Todo en Uno para tu Pequeña Empresa</h1>
-<p class="mt-4 max-w-2xl mx-auto text-lg text-dw-dark-gray dark:text-gray-300">Con SGO DataWorks®, tu pequeña empresa opera con la eficiencia de una grande. Automatiza, gestiona y crece sin complicaciones.</p>
-<div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-<a class="w-full sm:w-auto text-white text-base font-bold bg-primary px-6 py-3 rounded-lg hover:scale-105 transition-transform" href="#">Prueba gratuita de 30 días</a>
-<a class="w-full sm:w-auto text-dw-dark-blue dark:text-white text-base font-bold bg-white dark:bg-dw-dark-gray px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:scale-105 transition-transform" href="#">Ver demostración</a>
-</div>
-<div class="mt-6 flex justify-center items-center gap-4 text-sm text-dw-dark-gray dark:text-gray-400">
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-base">verified_user</span>
-<span>Credibilidad</span>
-</div>
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-base">lock</span>
-<span>Seguridad</span>
-</div>
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-base">thumb_up</span>
-<span>Confianza</span>
-</div>
-</div>
-</section>
-<section class="p-4 sm:p-6 mt-10">
-<div class="max-w-4xl mx-auto">
-<div class="relative overflow-hidden rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
-<div class="flex overflow-x-auto carousel-container">
-<div class="carousel-item relative" id="slide1">
-<img alt="Dashboard de Ventas" class="w-full aspect-[4/3] object-contain" src="./Sistema-2.png"/>
-<div class="absolute bottom-0 left-0 right-0 bg-black/50 p-4 backdrop-blur-sm">
-<p class="text-white text-sm font-semibold">Analisis de Ventas: Agiliza tus cobros y mejora tu flujo de caja. Ten el control total de tus ingresos para impulsar tu crecimiento.</p>
-</div>
-</div>
-<div class="carousel-item relative" id="slide2">
-<img alt="Gestión de Compras" class="w-full aspect-[4/3] object-contain" src="./Sistema-4.png"/>
-<div class="absolute bottom-0 left-0 right-0 bg-black/50 p-4 backdrop-blur-sm">
-<p class="text-white text-sm font-semibold">Módulo de Compras: Controla tus gastos y optimiza tus pagos. Toma decisiones inteligentes con recursos limitados.</p>
-</div>
-</div>
-<div class="carousel-item relative" id="slide3">
-<img alt="Control de Inventario" class="w-full aspect-[4/3] object-contain" src="./Sistema-3.png"/>
-<div class="absolute bottom-0 left-0 right-0 bg-black/50 p-4 backdrop-blur-sm">
-<p class="text-white text-sm font-semibold">Módulo de Inventario: Evita quedarte sin stock o tener exceso. Maximiza cada inversión en tus productos.</p>
-</div>
-</div>
-</div>
-<div class="absolute bottom-16 sm:bottom-20 left-1/2 -translate-x-1/2 flex space-x-2">
-<a class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors" href="#slide1"></a>
-<a class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors" href="#slide2"></a>
-<a class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors" href="#slide3"></a>
-</div>
-</div>
-</div>
-</section>
-<section class="p-4 sm:p-6 mt-10">
-<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm animate-on-scroll">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-3xl text-primary dark:text-dw-teal">smart_toy</span>
-<h2 class="text-2xl font-bold text-dw-dark-blue dark:text-white">SGO DataWorks® para Pequeñas Empresas</h2>
-</div>
-<p class="mt-2 text-dw-dark-gray dark:text-gray-300">Libera tu tiempo de tareas repetitivas. Nuestro SGO está diseñado para pequeñas empresas que necesitan hacer más con menos. Centraliza tu información y enfócate en lo que realmente importa: hacer crecer tu negocio.</p>
-</div>
-</section>
-<section class="p-4 sm:p-6 mt-4">
-<div class="text-center mb-8 animate-on-scroll">
-<h2 class="text-3xl font-bold tracking-tight text-dw-dark-blue dark:text-white">Un Sistema, Control Total para tu Pyme</h2>
-<p class="mt-2 text-dw-dark-gray dark:text-gray-300">Descubre los módulos diseñados para las necesidades de tu empresa.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm animate-on-scroll [animation-delay:100ms]">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary dark:text-dw-teal">shopping_cart</span>
-<h3 class="text-xl font-bold text-dw-dark-blue dark:text-white">Compras</h3>
-</div>
-<p class="mt-2 text-sm text-dw-dark-gray dark:text-gray-400"><strong class="text-dw-dark-blue dark:text-white">Función:</strong> Gestiona el registro de adquisiciones y términos de pago.</p>
-<p class="mt-1 text-sm text-dw-dark-gray dark:text-gray-400"><strong class="text-dw-dark-blue dark:text-white">Beneficio:</strong> Controla tus cuentas por pagar y planifica tu liquidez, clave para una pyme.</p>
-</div>
-<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm animate-on-scroll [animation-delay:200ms]">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary dark:text-dw-teal">inventory_2</span>
-<h3 class="text-xl font-bold text-dw-dark-blue dark:text-white">Depósito e Inventario</h3>
-</div>
-<p class="mt-2 text-sm text-dw-dark-gray dark:text-gray-400"><strong class="text-dw-dark-blue dark:text-white">Función:</strong> Gestiona inventario físico (ingresos/salidas).</p>
-<p class="mt-1 text-sm text-dw-dark-gray dark:text-gray-400"><strong class="text-dw-dark-blue dark:text-white">Beneficio:</strong> Optimiza tu inventario con alertas de reposición para no perder ventas.</p>
-</div>
-<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm animate-on-scroll [animation-delay:300ms]">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary dark:text-dw-teal">sell</span>
-<h3 class="text-xl font-bold text-dw-dark-blue dark:text-white">Ventas</h3>
-</div>
-<p class="mt-2 text-sm text-dw-dark-gray dark:text-gray-400"><strong class="text-dw-dark-blue dark:text-white">Función:</strong> Registra ventas y condición de pago.</p>
-<p class="mt-1 text-sm text-dw-dark-gray dark:text-gray-400"><strong class="text-dw-dark-blue dark:text-white">Beneficio:</strong> Gestiona eficientemente tus cuentas por cobrar para mantener un flujo de caja sano.</p>
-</div>
-<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm animate-on-scroll [animation-delay:400ms]">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary dark:text-dw-teal">local_shipping</span>
-<h3 class="text-xl font-bold text-dw-dark-blue dark:text-white">Logística</h3>
-</div>
-<p class="mt-2 text-sm text-dw-dark-gray dark:text-gray-400"><strong class="text-dw-dark-blue dark:text-white">Función:</strong> Gestiona información de envíos vinculada a ventas.</p>
-<p class="mt-1 text-sm text-dw-dark-gray dark:text-gray-400"><strong class="text-dw-dark-blue dark:text-white">Beneficio:</strong> Trazabilidad y organización para que tus entregas sean siempre puntuales.</p>
-</div>
-<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm animate-on-scroll [animation-delay:500ms]">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary dark:text-dw-teal">receipt_long</span>
-<h3 class="text-xl font-bold text-dw-dark-blue dark:text-white">Transacciones</h3>
-</div>
-<p class="mt-2 text-sm text-dw-dark-gray dark:text-gray-400"><strong class="text-dw-dark-blue dark:text-white">Función:</strong> Registra movimientos financieros (clase, concepto, medio).</p>
-<p class="mt-1 text-sm text-dw-dark-gray dark:text-gray-400"><strong class="text-dw-dark-blue dark:text-white">Beneficio:</strong> Gestión del flujo de caja con análisis detallado para tomar mejores decisiones.</p>
-</div>
-<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm animate-on-scroll [animation-delay:600ms]">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary dark:text-dw-teal">event_repeat</span>
-<h3 class="text-xl font-bold text-dw-dark-blue dark:text-white">Vencimientos</h3>
-</div>
-<p class="mt-2 text-sm text-dw-dark-gray dark:text-gray-400"><strong class="text-dw-dark-blue dark:text-white">Función:</strong> Administra fechas de vencimiento (importe, pagos, saldo).</p>
-<p class="mt-1 text-sm text-dw-dark-gray dark:text-gray-400"><strong class="text-dw-dark-blue dark:text-white">Beneficio:</strong> Proyecta y mitiga riesgos financieros para una mayor estabilidad.</p>
-</div>
-</div>
-<p class="text-center mt-6 text-sm text-dw-dark-gray dark:text-gray-400 animate-on-scroll [animation-delay:700ms]">Y Módulos Maestros (Productos, Clientes, Proveedores) para garantizar la consistencia de tus datos.</p>
-</section>
-<section class="p-4 sm:p-6 mt-10">
-<div class="bg-dw-dark-blue text-white p-8 rounded-xl animate-on-scroll">
-<h2 class="text-3xl font-bold tracking-tight text-center">Hecho para Crecer Contigo</h2>
-<p class="mt-2 text-center text-gray-300">Elige un plan que se adapte al tamaño de tu empresa y aprovecha nuestra capacitación.</p>
-<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-<div>
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-dw-teal">payments</span>
-<h3 class="text-xl font-bold">Precios para Pequeñas Empresas</h3>
-</div>
-<p class="mt-2 text-gray-400">Ofrecemos modelos de suscripción flexibles y transparentes, pensados para no afectar tu presupuesto limitado.</p>
-</div>
-<div>
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-dw-teal">school</span>
-<h3 class="text-xl font-bold">Capacitación y Soporte Real</h3>
-</div>
-<p class="mt-2 text-gray-400">Te acompañamos en cada paso para que tú y tu equipo le saquen el máximo provecho al SGO desde el primer día.</p>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer class="bg-dw-dark-blue text-white mt-10">
-<div class="px-4 py-12 text-center">
-<h2 class="text-3xl font-extrabold tracking-tight">¿Listo para transformar tu pequeña empresa?</h2>
-<p class="mt-4 text-lg text-gray-300">Da el primer paso hacia una gestión más eficiente y un crecimiento más rápido.</p>
-<button class="mt-8 flex w-full max-w-sm mx-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:scale-105 active:scale-95">
-          Iniciar prueba de 30 días
-        </button>
-<div class="mt-6 flex justify-center gap-6">
-<a class="flex items-center gap-2 text-gray-300 hover:text-white" href="#">
-<span class="material-symbols-outlined">chat</span>
-<span>Contactar con Ventas</span>
-</a>
-<a class="flex items-center gap-2 text-gray-300 hover:text-white" href="#">
-<span class="material-symbols-outlined">call</span>
-<span>Llámenos</span>
-</a>
-</div>
-</div>
-<div class="border-t border-white/10 py-6 px-4">
-<div class="text-center text-sm text-gray-400">
-<p>© 2024 DataWorks Inc. Todos los derechos reservados.</p>
-<div class="mt-2 space-x-4">
-<a class="hover:text-white" href="#">Política de Privacidad</a>
-<a class="hover:text-white" href="#">Términos de Servicio</a>
-</div>
-</div>
-</div>
-</footer>
-</div>
-<!-- Script para el menú hamburguesa -->
-<script>
-  // Espera a que la página esté cargada
-  document.addEventListener('DOMContentLoaded', () => {
+<body class="font-display bg-background-light dark:bg-background-dark text-dw-dark-blue dark:text-dw-light-gray">
+  <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
     
-    // 1. Selecciona los elementos por su ID
-    const boton = document.getElementById('boton-movil');
-    const menu = document.getElementById('menu-movil');
-    const icono = document.getElementById('icono-menu');
+    <header class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 justify-between border-b border-gray-200 dark:border-gray-700">
+      </header>
 
-    // 2. Escucha el 'clic' en el botón
-    boton.addEventListener('click', () => {
-      
-      // 3. Alterna la clase 'hidden' en el menú
-      // (Si está oculto lo muestra, si está visible lo oculta)
-      menu.classList.toggle('hidden');
+    <main class="flex-1">
+      </main>
 
-      // 4. (Opcional) Cambia el ícono de 'menu' a 'close'
-      if (menu.classList.contains('hidden')) {
-        // Menú está oculto
-        icono.textContent = 'menu';
-      } else {
-        // Menú está visible
-        icono.textContent = 'close';
-      }
-    });
-  });
-</script>
-</body></html>
+    <footer class="bg-dw-dark-blue text-white mt-10">
+      </footer>
+
+  </div>
+  </body>
+</html>
