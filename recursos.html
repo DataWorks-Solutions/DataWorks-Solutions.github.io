@@ -29,8 +29,14 @@
           },
           borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
           keyframes: {
-            fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-            pulse: { '0%, 100%': { transform: 'scale(1)' }, '50%': { transform: 'scale(1.05)' } }
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            pulse: {
+              '0%, 100%': { transform: 'scale(1)' },
+              '50%': { transform: 'scale(1.05)' },
+            }
           },
           animation: {
             'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
@@ -40,24 +46,168 @@
       },
     }
   </script>
-  
+
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
-  
+
 </head>
 
 <body class="font-display bg-background-light dark:bg-background-dark">
   <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-    
     <header class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 justify-between border-b border-gray-200 dark:border-gray-700">
-      </header>
+      <a href="./index.html" class="text-dw-dark-blue dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] flex-1 flex items-center">
+
+        <img src="Logo.jpg" alt="Logo de DataWorks" class="h-12 w-12 rounded-full">
+
+        <span class="ml-2">DataWorks</span>
+
+      </a>
+      <div class="flex items-center gap-4">
+        <a class="hidden sm:block text-white text-sm font-bold bg-dw-dark-blue px-4 py-2 rounded-lg" href="#">Solicitar más información</a>
+        <nav class="relative flex justify-end p-4">
+
+          <button id="boton-movil" class="text-dw-dark-blue dark:text-white z-50">
+            <span id="icono-menu" class="material-symbols-outlined text-3xl">menu</span>
+          </button>
+
+          <div id="menu-movil" class="hidden absolute top-12 right-4 z-40 min-w-[200px] bg-white dark:bg-dw-dark-blue rounded-lg shadow-lg border dark:border-gray-700">
+            <ul class="flex flex-col p-2">
+              <li>
+                <a href="index.html" class="block w-full px-4 py-2 rounded text-dw-dark-blue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                  Principal
+                </a>
+              </li>
+              <li>
+                <a href="precios.html" class="block w-full px-4 py-2 rounded text-dw-dark-blue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                  Precios
+                </a>
+              </li>
+              <li>
+                <a href="recursos.html" class="block w-full px-4 py-2 rounded text-dw-dark-blue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                  Recursos
+                </a>
+              </li>
+              <li>
+                <a href="sistema.html" class="block w-full px-4 py-2 rounded text-dw-dark-blue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                  Productos para Pymes
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </nav>
+
+      </div>
+    </header>
 
     <main>
-      </main>
+
+      <div class="@[container]">
+        <div class="@[480px]:p-4">
+          <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10" data-alt="Abstract blue and teal geometric pattern" style='background-image: linear-gradient(rgba(10, 37, 64, 0.4) 0%, rgba(10, 37, 64, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCwgxnfWA8wk1f7btj-yZEfnlbcnLQWF3hqyssQ_No9pW6QGzRi--NMlKpe0-6_N3mZP-XSVpEDxGvf2tgbR2zhhzQ_X67a5ynS77IqG9QhqNe7evJIaDgGfFW-gJqc7Fy7q0IGKA7GwobtTaFKbFDYEClF0at9K5QVRXyY8AVVDP6ekl6uFEEkQxc69e5HdPDmt-OXRg5O2Fslfcf9cujC59T3kDT70pnXq5r5bc7g09Hd-AU5fHh5ejL8EI8vjlvNp827lBnHX3lI");'>
+            <div class="flex flex-col gap-4 text-left">
+              <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl">
+                Optimice sus Procesos con Soluciones Digitales y Análisis de Datos
+              </h1>
+              <h2 class="text-gray-200 text-base font-normal leading-normal @[480px]:text-lg">
+                Desarrollamos soluciones completas de poco código y análisis avanzado para que su organización ahorre tiempo y se centre en lo esencial.
+              </h2>
+            </div>
+            <div class="flex w-full flex-col sm:flex-row gap-3">
+              <button class="flex w-full sm:w-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:scale-105 active:scale-95">
+                <span class="truncate">Chatear con ventas</span>
+              </button>
+              <button class="flex w-full sm:w-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-white/90 text-dw-dark-blue text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:scale-105 active:scale-95">
+                <a href="sistema.html" class="truncate">Prueba SGO DataWorks®</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pb-3 sticky top-[73px] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-40">
+        </div>
+
+      <div id="tab-content">
+        <section id="Recursos">
+          <div class="px-4 py-10 overflow-hidden">
+            <div class="max-w-lg mx-auto">
+              <div class="text-center mb-10 animate-on-scroll">
+                <h2 class="text-dw-dark-blue dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]">Conocimiento a su Alcance</h2>
+                <p class="text-dw-dark-gray dark:text-gray-300 mt-2 text-base">Explore nuestros recursos para profundizar su experiencia y aprendizaje.</p>
+              </div>
+              <div class="flex flex-col gap-6">
+                <div class="animate-on-scroll bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col items-start gap-3">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-2xl">article</span>
+                    <h3 class="text-dw-dark-blue dark:text-white text-xl font-bold">Blog</h3>
+                  </div>
+                  <p class="text-dw-dark-gray dark:text-gray-300 text-sm">Descubra artículos, tendencias y consejos sobre análisis de datos y optimización de procesos.</p>
+                  <button class="w-full sm:w-auto mt-2 text-primary dark:text-dw-teal text-sm font-bold border border-primary dark:border-dw-teal rounded-lg py-2.5 px-6 hover:bg-primary/10 dark:hover:bg-dw-teal/10 transition-all duration-200 active:scale-95 active:bg-primary/20 dark:active:bg-dw-teal/20">Leer el blog</button>
+                </div>
+                <div class="animate-on-scroll [animation-delay:150ms] bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col items-start gap-3">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-2xl">description</span>
+                    <h3 class="text-dw-dark-blue dark:text-white text-xl font-bold">Documentación</h3>
+                  </div>
+                  <p class="text-dw-dark-gray dark:text-gray-300 text-sm">Guías técnicas y detalladas para aprovechar al máximo nuestras herramientas y soluciones.</p>
+                  <button class="w-full sm:w-auto mt-2 text-primary dark:text-dw-teal text-sm font-bold border border-primary dark:border-dw-teal rounded-lg py-2.5 px-6 hover:bg-primary/10 dark:hover:bg-dw-teal/10 transition-all duration-200 active:scale-95 active:bg-primary/20 dark:active:bg-dw-teal/20">Leer documentación</button>
+                </div>
+                <div class="animate-on-scroll [animation-delay:300ms] bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col items-start gap-3">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-2xl">auto_stories</span>
+                    <h3 class="text-dw-dark-blue dark:text-white text-xl font-bold">E-book / Infografía</h3>
+                  </div>
+                  <p class="text-dw-dark-gray dark:text-gray-300 text-sm">Contenido visual y profundo para comprender conceptos complejos de forma sencilla.</p>
+                  <button class="w-full sm:w-auto mt-2 text-primary dark:text-dw-teal text-sm font-bold border border-primary dark:border-dw-teal rounded-lg py-2.5 px-6 hover:bg-primary/10 dark:hover:bg-dw-teal/10 transition-all duration-200 active:scale-95 active:bg-primary/20 dark:active:bg-dw-teal/20">Leer el e-book</button>
+                </div>
+                <div class="animate-on-scroll [animation-delay:450ms] bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col items-start gap-3">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-2xl">school</span>
+                    <h3 class="text-dw-dark-blue dark:text-white text-xl font-bold">Aprendizaje Autodirigido</h3>
+                  </div>
+                  <p class="text-dw-dark-gray dark:text-gray-300 text-sm">Tutoriales y cursos para que usted y su equipo desarrollen nuevas habilidades a su propio ritmo.</p>
+                  <button class="w-full sm:w-auto mt-2 bg-primary text-white text-sm font-bold rounded-lg py-2.5 px-6 hover:bg-primary/90 transition-all duration-200 active:scale-95 active:bg-primary/80">Comenzar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </div>
+
+    </main>
 
     <footer class="bg-dw-dark-blue text-white mt-10">
-      </footer>
-    
+      <div class="px-4 py-12 text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight">Dé el Siguiente Paso hacia la Optimización.</h2>
+        <p class="mt-4 text-lg text-gray-300">¿Listo para liberar todo el potencial de su negocio?</p>
+        <p class="mt-4 text-lg text-gray-300">Te invitamos a conocer nuestro Sistema todo en uno para Pequeñas Empresas, SGO DataWorks® diseñado para Pymes que necesitan hacer más con menos.</p>
+        <a href="./sistema.html" class="mt-8 flex w-full max-w-sm mx-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:scale-105 active:scale-95">
+          Más información sobre SGO DataWorks®</a>
+        <div class="mt-6 flex justify-center gap-6">
+          <a class="flex items-center gap-2 text-gray-300 hover:text-white" href="#">
+            <span class="material-symbols-outlined">chat</span>
+            <span>Contactar con Ventas</span>
+          </a>
+          <a class="flex items-center gap-2 text-gray-300 hover:text-white" href="#">
+            <span class="material-symbols-outlined">call</span>
+            <span>Llámenos</span>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-white/10 py-6 px-4">
+        <div class="text-center text-sm text-gray-400">
+          <p>© 2024 DataWorks Inc. Todos los derechos reservados.</p>
+          <div class="mt-2 space-x-4">
+            <a class="hover:text-white" href="#">Política de Privacidad</a>
+            <a class="hover:text-white" href="#">Términos de Servicio</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
   </div>
-  </body>
+</body>
 </html>
